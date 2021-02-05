@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState, useEffect } from "react";
 function App() {
+  const [currentLoction, setCurrentLocation] = useState({});
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        let coordinates = pos.coords;
+        setCurrentLocation(coordinates);
+      },
+      (err) => {
+        console.warn(`Error (${err.code}): ${err.message}`);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      }
+    );
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => console.log(currentLoction)}>
+        Show coordinates
+      </button>
     </div>
   );
 }
