@@ -1,0 +1,25 @@
+:root {
+  --body-bg-color: #252525;
+  --text-color: #fffacd;
+  --icon-color: #6bb9f0;
+
+  --container-bg-color: rgba(0, 0, 0, 0.3);
+  --container-border: 3px solid #80ffdb;
+  --container-values-color: #00ced1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 130px auto 130px;
+  grid-template-rows: 40px auto 20px auto 40px;
+}

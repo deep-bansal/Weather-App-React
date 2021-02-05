@@ -1,0 +1,43 @@
+.dataContainer {
+  grid-column: 2/3;
+  grid-row: 7/8;
+
+  width: 1100px;
+  height: 500px;
+  background-color: var(--container-bg-color);
+  border: var(--container-border);
+  border-radius: 45px;
+  padding: 15px;
+  display: grid;
+  grid-template-rows: auto 10px auto 10px auto;
+}
+
+.mainContent {
+  grid-row: 1/2;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dataContainer h3 {
+  font-size: 3rem;
+}
+
+.dataContainer ul {
+  list-style: none;
+}
+.additionalContent {
+  grid-row: 3/4;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+}
+
+.dataList {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.values {
+  color: var(--container-values-color);
+}
